@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request; 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 
 
+Route::post('/register',  [AuthController::class, 'register']);
 // Route::resource('products', ProductController::class);
 Route::get('/products',  [ProductController::class, 'index']);
 Route::get('/products/{id}',  [ProductController::class, 'show']);
